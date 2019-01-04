@@ -3,7 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Injectable()
-export class  ErrorsHandlers  implements ErrorHandler {
+export class  ErrorsInterceptor implements ErrorHandler {
  
     constructor(
         // Because the ErrorHandler is created before the providers, we’ll have to use the Injector to get them
