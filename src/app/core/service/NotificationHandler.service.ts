@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { toBase64String } from '@angular/compiler/src/output/source_map';
+
+declare  let toastr : any
 
 Injectable()
 export class NotificationHandler {
@@ -8,12 +9,21 @@ export class NotificationHandler {
     notify(message: String,type :  string):void{
 
         switch(type){
-            case  'success' :  break;
-            case  'warning' : break;
-            case 'error' : break;
-            case 'info' : break;
+            case  'success' : 
+                 toastr.success(message);
+            break;
+            case  'warning' : 
+                toastr.warning(message);
+            break;
+            case 'error' : 
+                toastr.error(message);
+            break;
+            case 'info' : 
+                toastr.info(message);
+            break;
 
             default : 
+                toastr.info(message);
             break;
         }
 
