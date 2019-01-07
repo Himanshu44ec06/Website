@@ -7,6 +7,8 @@ import { NavComponent } from './nav/nav.component';
 
 import  { httpInterceptorProviders}   from  './core/http-interceptors/index';
 import { ErrorsInterceptor } from './core/error-interceptors/errors-interceptor';
+import { UrlSerializer } from '@angular/router';
+import { LowerCaseUrlSerializer } from './core/url-interceptors/url-interceptor';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,10 @@ import { ErrorsInterceptor } from './core/error-interceptors/errors-interceptor'
     {
       provide : ErrorHandler,  
       useClass :  ErrorsInterceptor //  Handling errors  globally
+    },
+    {
+      provide  :UrlSerializer,
+      useClass : LowerCaseUrlSerializer
     }
 
   ],
