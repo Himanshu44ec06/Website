@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
 
-Injectable()
+@Injectable({
+    providedIn : 'root'
+})
 export class NotificationHandler {
 
 

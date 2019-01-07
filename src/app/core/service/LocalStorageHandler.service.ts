@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { IBrowserStorage } from '../interface/IBrowserStorage';
 
-@Injectable()
+@Injectable({
+    providedIn : 'root'
+})
 export  class LocalStorageHandler implements  IBrowserStorage {
 
     constructor(){}

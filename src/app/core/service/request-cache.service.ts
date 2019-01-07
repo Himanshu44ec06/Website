@@ -6,7 +6,9 @@ import { RequestCacheEntry } from '../model/RequestCacheEntry';
 
 const maxAge = 30000; // maximum cache age (ms)
 
-@Injectable()
+@Injectable({
+    providedIn : 'root'
+})
 export class RequestCache implements IRequestCache {
 
   cache = new Map<string, RequestCacheEntry>();
