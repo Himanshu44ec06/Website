@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 declare  let toastr : any
 
-Injectable()
+@Injectable({
+    providedIn : 'root'
+})
 export class NotificationHandler {
 
 
