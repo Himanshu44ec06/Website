@@ -1,12 +1,18 @@
 import { DefaultUrlSerializer, UrlTree } from '@angular/router';
 
-export  class  LowerCaseUrlSerializer  implements  DefaultUrlSerializer  {
+export  class  LowerCaseUrlSerializer   {
 
+    defaultUrlSerializer :  DefaultUrlSerializer;
+    constructor(){
+         this.defaultUrlSerializer = new DefaultUrlSerializer();
+    }
+    
     parse(url:string) : UrlTree {
-        return super.parse(url.toLowerCase()); 
+        return this.defaultUrlSerializer.parse(url.toLowerCase());
+        
     }
 
     serialize(tree: UrlTree): string {
-         return  super.serialize(tree);
+        return  this.defaultUrlSerializer.serialize(tree);
     }
 }
